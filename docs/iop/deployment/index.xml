@@ -1,0 +1,104 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CERN Storage Tech Week – Deployment</title>
+    <link>/storagetechweek2024/docs/iop/deployment/</link>
+    <description>Recent content in Deployment on CERN Storage Tech Week</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/storagetechweek2024/docs/iop/deployment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Local Deployment</title>
+      <link>/storagetechweek2024/docs/iop/deployment/local/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/storagetechweek2024/docs/iop/deployment/local/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;reva&#34;&gt;Reva&lt;/h2&gt;
+
+&lt;p&gt;Install Reva following the official documentation: &lt;a href=&#34;https://reva.link/docs/getting-started/install-reva/&#34; target=&#34;_blank&#34;&gt;Install Reva&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;owncloud-phoenix&#34;&gt;ownCloud Phoenix&lt;/h2&gt;
+
+&lt;p&gt;ownCloud Phoenix is not a required component for the IOP however is a nice add-on as it allows to interact with the IOP from a nice UI.
+To install Phoenix from the sources do:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/owncloud/phoenix
+cd phoenix
+git checkout v0.4.0
+yarn install-all
+yarn dist
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;configure-reva&#34;&gt;Configure Reva&lt;/h2&gt;
+
+&lt;p&gt;If you want to configure Reva to run locally with Phoenix you can follow this tutorial: &lt;a href=&#34;https://reva.link/docs/tutorials/phoenix-tutorial/&#34; target=&#34;_blank&#34;&gt;https://reva.link/docs/tutorials/phoenix-tutorial/&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Minikube Deployment</title>
+      <link>/storagetechweek2024/docs/iop/deployment/minikube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/storagetechweek2024/docs/iop/deployment/minikube/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;This tutorial demonstrates how to deploy both REVA and Phoenix on a local Minikube cluster with a single helm chart.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl/&#34; target=&#34;_blank&#34;&gt;kubectl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-minikube/&#34; target=&#34;_blank&#34;&gt;minikube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34; target=&#34;_blank&#34;&gt;helm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Clone the repo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git clone https://github.com/sciencemesh/sciencemesh.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;launch-minikube-and-configure-the-helm-tiller-add-on&#34;&gt;Launch minikube and configure the helm-tiller add-on&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;minikube start
+minikube addons &lt;span style=&#34;color:#204a87&#34;&gt;enable&lt;/span&gt; helm-tiller&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If it is the first time you&amp;rsquo;re running minikube, take a look to the &lt;a href=&#34;https://kubernetes.io/docs/setup/learning-environment/minikube/#specifying-the-vm-driver&#34; target=&#34;_blank&#34;&gt;different VM drivers&lt;/a&gt; available for the `&amp;ndash;driver&amp;rsquo; flag to pick the best one for your system.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;deploy-reva-and-phoenix-using-the-helm-chart&#34;&gt;Deploy REVA and Phoenix using the helm chart&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;helm install reva-phoenix ./reva-phoenix&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And verify the deployments are ready by running:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -o wide
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS          IMAGES             SELECTOR
+phoenix-deployment   &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;/1     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;            &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;           3m    phoenix-container   owncloud/phoenix   &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;phoenix
+revad-deployment     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;/1     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;            &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;           3m    revad-container     cs3org/revad       &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;revad&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;forward-ports&#34;&gt;Forward ports&lt;/h3&gt;
+
+&lt;p&gt;In order to access the Phoenix web UI from your browser, you&amp;rsquo;ll need to create some port-forwards to the services runninng in the cluster:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl port-forward svc/revad-svc &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;20080&lt;/span&gt;:20080 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;kubectl port-forward svc/phoenix-svc &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8300&lt;/span&gt;:8300 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now just browse to &lt;a href=&#34;http://localhost:8300&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;http://localhost:8300&lt;/code&gt;&lt;/a&gt; to verify everything is up and running. Try to log in by using username &lt;code&gt;einstein&lt;/code&gt; and password &lt;code&gt;relativity&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;cleanup&#34;&gt;Cleanup&lt;/h3&gt;
+
+&lt;p&gt;Once done testing, you can quickly tear down the deployment by running:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;helm delete reva-phoenix
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# If you want to remove the local cluster as well:&lt;/span&gt;
+minikube delete&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

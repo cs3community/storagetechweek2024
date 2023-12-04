@@ -1,0 +1,54 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CERN Storage Tech Week – Changelog</title>
+    <link>/storagetechweek2024/docs/changelog/</link>
+    <description>Recent content in Changelog on CERN Storage Tech Week</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/storagetechweek2024/docs/changelog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: v0.0.1</title>
+      <link>/storagetechweek2024/docs/changelog/0.0.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/storagetechweek2024/docs/changelog/0.0.1/</guid>
+      <description>
+        
+        
+        
+
+&lt;h1 id=&#34;changelog-for-reva-0-0-1-2019-10-24&#34;&gt;Changelog for Reva 0.0.1 (2019-10-24)&lt;/h1&gt;
+
+&lt;p&gt;The following sections list the changes in Reva 0.0.1 relevant to
+Reva users. The changes are ordered by importance.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Enh #334: Create release procedure for Reva&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;details&#34;&gt;Details&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Enhancement #334: Create release procedure for Reva&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Reva did not have any procedure to release versions. This PR brings a new tool to release Reva
+   versions (tools/release) and prepares the necessary files for artefact distributed made
+   from Drone into Github pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/cs3org/reva/pull/334&#34; target=&#34;_blank&#34;&gt;https://github.com/cs3org/reva/pull/334&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

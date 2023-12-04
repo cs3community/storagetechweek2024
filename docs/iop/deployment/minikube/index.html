@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.59.0-DEV" /><link rel="alternate" type="application/rss&#43;xml" href="/storagetechweek2024/docs/iop/deployment/minikube/index.xml">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/storagetechweek2024/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-192x192.png" sizes="192x192">
+
+<title>Minikube Deployment | CERN Storage Tech Week</title><meta property="og:title" content="Minikube Deployment" />
+<meta property="og:description" content="How to deploy the ScienceMesh IOP using Minikube?
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/storagetechweek2024/docs/iop/deployment/minikube/" />
+
+<meta itemprop="name" content="Minikube Deployment">
+<meta itemprop="description" content="How to deploy the ScienceMesh IOP using Minikube?
+">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Minikube Deployment"/>
+<meta name="twitter:description" content="How to deploy the ScienceMesh IOP using Minikube?
+"/>
+
+
+
+
+
+<link rel="preload" href="/storagetechweek2024/scss/main.min.6a5b34902a36fa79d646d3d3a4af80a7778ee0dc9de02f268530e5a9c1148a34.css" as="style">
+<link href="/storagetechweek2024/scss/main.min.6a5b34902a36fa79d646d3d3a4af80a7778ee0dc9de02f268530e5a9c1148a34.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/storagetechweek2024/">
+		
+		<span class="navbar-logo"></span>
+	</a>
+	
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://indico.cern.ch/event/1332413/program" target="_blank" ><span>CS3 CONFERENCE</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://indico.cern.ch/event/1332413/abstracts" target="_blank" ><span>CTA Workshop</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://indico.cern.ch/event/1332413/abstracts" target="_blank" ><span>EOS Workshop</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <div id="content-mobile">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  </div>
+  <div id="content-desktop"></div>
+  
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="storagetechweek2024-docs">
+      
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Overview</a>
+  </li>
+  <ul>
+    <li class="collapse " id="storagetechweek2024-docs-overview">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/iop/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">IOP</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="storagetechweek2024-docs-iop">
+      
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/iop/deployment/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Deployment</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="storagetechweek2024-docs-iop-deployment">
+      
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/iop/deployment/local/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Local</a>
+  </li>
+  <ul>
+    <li class="collapse " id="storagetechweek2024-docs-iop-deployment-local">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/iop/deployment/minikube/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Minikube</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="storagetechweek2024-docs-iop-deployment-minikube">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/changelog/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Changelog</a>
+  </li>
+  <ul>
+    <li class="collapse " id="storagetechweek2024-docs-changelog">
+      
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/changelog/0.0.1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">v0.0.1</a>
+  </li>
+  <ul>
+    <li class="collapse " id="storagetechweek2024-docs-changelog-0-0-1">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/storagetechweek2024/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contribution Guidelines</a>
+  </li>
+  <ul>
+    <li class="collapse " id="storagetechweek2024-docs-contribution-guidelines">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/sciencemesh/sciencemesh/edit/master/content/en/docs/IOP/Deployment/Minikube/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/sciencemesh/sciencemesh/new/master/content/en/docs/IOP/Deployment/Minikube/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/sciencemesh/sciencemesh/issues/new?title=Minikube%20Deployment" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+<a href="https://github.com/sciencemesh/sciencemesh/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a>
+<ul>
+<li><a href="#launch-minikube-and-configure-the-helm-tiller-add-on">Launch minikube and configure the helm-tiller add-on</a></li>
+<li><a href="#deploy-reva-and-phoenix-using-the-helm-chart">Deploy REVA and Phoenix using the helm chart</a></li>
+<li><a href="#forward-ports">Forward ports</a></li>
+<li><a href="#cleanup">Cleanup</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/storagetechweek2024/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/storagetechweek2024/docs/iop/">IOP</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/storagetechweek2024/docs/iop/deployment/">Deployment</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="/storagetechweek2024/docs/iop/deployment/minikube/">Minikube</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Minikube Deployment</h1>
+        <div class="lead">How to deploy the ScienceMesh IOP using Minikube?</div>
+	
+	
+
+<p>This tutorial demonstrates how to deploy both REVA and Phoenix on a local Minikube cluster with a single helm chart.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank">kubectl</a></li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/" target="_blank">minikube</a></li>
+<li><a href="https://helm.sh/docs/intro/install/" target="_blank">helm</a></li>
+</ul>
+
+<p>Clone the repo:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/sciencemesh/sciencemesh.git</code></pre></div>
+<h3 id="launch-minikube-and-configure-the-helm-tiller-add-on">Launch minikube and configure the helm-tiller add-on</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">minikube start
+minikube addons <span style="color:#204a87">enable</span> helm-tiller</code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> If it is the first time you&rsquo;re running minikube, take a look to the <a href="https://kubernetes.io/docs/setup/learning-environment/minikube/#specifying-the-vm-driver" target="_blank">different VM drivers</a> available for the `&ndash;driver&rsquo; flag to pick the best one for your system.</p>
+</blockquote>
+
+<h3 id="deploy-reva-and-phoenix-using-the-helm-chart">Deploy REVA and Phoenix using the helm chart</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm install reva-phoenix ./reva-phoenix</code></pre></div>
+<p>And verify the deployments are ready by running:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments -o wide
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS          IMAGES             SELECTOR
+phoenix-deployment   <span style="color:#0000cf;font-weight:bold">1</span>/1     <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">1</span>           3m    phoenix-container   owncloud/phoenix   <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>phoenix
+revad-deployment     <span style="color:#0000cf;font-weight:bold">1</span>/1     <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">1</span>           3m    revad-container     cs3org/revad       <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>revad</code></pre></div>
+<h3 id="forward-ports">Forward ports</h3>
+
+<p>In order to access the Phoenix web UI from your browser, you&rsquo;ll need to create some port-forwards to the services runninng in the cluster:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl port-forward svc/revad-svc <span style="color:#0000cf;font-weight:bold">20080</span>:20080 <span style="color:#000;font-weight:bold">&amp;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>kubectl port-forward svc/phoenix-svc <span style="color:#0000cf;font-weight:bold">8300</span>:8300 <span style="color:#000;font-weight:bold">&amp;</span></code></pre></div>
+<p>Now just browse to <a href="http://localhost:8300" target="_blank"><code>http://localhost:8300</code></a> to verify everything is up and running. Try to log in by using username <code>einstein</code> and password <code>relativity</code>.</p>
+
+<h3 id="cleanup">Cleanup</h3>
+
+<p>Once done testing, you can quickly tear down the deployment by running:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm delete reva-phoenix
+<span style="color:#8f5902;font-style:italic"># If you want to remove the local cluster as well:</span>
+minikube delete</code></pre></div>
+        <div class="section-index">
+    
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 29, 2020: <a  href="https://github.com/sciencemesh/sciencemesh/commit/c306efcec1d118943304ed2a2aacbc38c7bfc6ee">init (c306efc)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-primary py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a target="_blank" href="https://github.com/sciencemesh/sciencemesh">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/storagetechweek2024/js/main.min.ba9d6d48798c0958238d849c5edf9327d4deaf60493243f591b4c029872db933.js" integrity="sha256-up1tSHmMCVgjjYScXt&#43;TJ9Ter2BJMkP1kbTAKYctuTM=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

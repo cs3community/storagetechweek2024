@@ -1,0 +1,44 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CERN Storage Tech Week – Inter-Operability Platform</title>
+    <link>/storagetechweek2024/docs/iop/</link>
+    <description>Recent content in Inter-Operability Platform on CERN Storage Tech Week</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/storagetechweek2024/docs/iop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Deployment</title>
+      <link>/storagetechweek2024/docs/iop/deployment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/storagetechweek2024/docs/iop/deployment/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;deployment&#34;&gt;Deployment&lt;/h2&gt;
+
+&lt;p&gt;The ScienceMesh IOP consists of various components, being the core one &lt;a href=&#34;https://reva.link&#34; target=&#34;_blank&#34;&gt;Reva&lt;/a&gt;. Reva is an inter-operability platform that bridge the gap between cloud storages and application providers.&lt;/p&gt;
+
+&lt;h2 id=&#34;local-deployment&#34;&gt;Local deployment&lt;/h2&gt;
+
+&lt;p&gt;Deploy invidual components one by one in your local computer. This approach is the best to learn how the different services connect to each other.&lt;/p&gt;
+
+&lt;h2 id=&#34;minikube-deployment&#34;&gt;Minikube deployment&lt;/h2&gt;
+
+&lt;p&gt;The official mode of deployment for the platform will be to use Kubernetes and Helm charts.
+Having a fully fledged Kubernetes cluster is a task on its own, so for the time being we provide a local Minikube deployment using the same specifications that will be consumed by a production Kubernetes cluster, so you can hack in your own computer.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
