@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CERN Storage Tech Week – Deployment</title>
-    <link>/storagetechweek2024/docs/iop/deployment/</link>
+    <link>/docs/iop/deployment/</link>
     <description>Recent content in Deployment on CERN Storage Tech Week</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/storagetechweek2024/docs/iop/deployment/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/iop/deployment/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Local Deployment</title>
-      <link>/storagetechweek2024/docs/iop/deployment/local/</link>
+      <link>/docs/iop/deployment/local/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/storagetechweek2024/docs/iop/deployment/local/</guid>
+      <guid>/docs/iop/deployment/local/</guid>
       <description>
         
         
@@ -49,10 +49,10 @@ yarn dist
     
     <item>
       <title>Docs: Minikube Deployment</title>
-      <link>/storagetechweek2024/docs/iop/deployment/minikube/</link>
+      <link>/docs/iop/deployment/minikube/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/storagetechweek2024/docs/iop/deployment/minikube/</guid>
+      <guid>/docs/iop/deployment/minikube/</guid>
       <description>
         
         

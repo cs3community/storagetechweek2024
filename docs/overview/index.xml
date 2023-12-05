@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CERN Storage Tech Week – Overview</title>
-    <link>/storagetechweek2024/docs/overview/</link>
+    <link>/docs/overview/</link>
     <description>Recent content in Overview on CERN Storage Tech Week</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/storagetechweek2024/docs/overview/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/overview/index.xml" rel="self" type="application/rss+xml" />
     
     
       
