@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CERN Storage Tech Week – Minikube Deployment</title>
-    <link>/storagetechweek2024/docs/iop/deployment/minikube/</link>
+    <link>/docs/iop/deployment/minikube/</link>
     <description>Recent content in Minikube Deployment on CERN Storage Tech Week</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/storagetechweek2024/docs/iop/deployment/minikube/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/iop/deployment/minikube/index.xml" rel="self" type="application/rss+xml" />
     
     
       

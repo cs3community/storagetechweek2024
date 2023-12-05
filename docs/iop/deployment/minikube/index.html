@@ -3,26 +3,26 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.59.0-DEV" /><link rel="alternate" type="application/rss&#43;xml" href="/storagetechweek2024/docs/iop/deployment/minikube/index.xml">
+<meta name="generator" content="Hugo 0.59.0-DEV" /><link rel="alternate" type="application/rss&#43;xml" href="/docs/iop/deployment/minikube/index.xml">
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
-<link rel="apple-touch-icon" href="/storagetechweek2024/favicons/apple-touch-icon-180x180.png" sizes="180x180">
-<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/favicon-16x16.png" sizes="16x16">
-<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-36x36.png" sizes="36x36">
-<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-48x48.png" sizes="48x48">
-<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-72x72.png" sizes="72x72">
-<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-144x144.png" sizes="144x144">
-<link rel="icon" type="image/png" href="/storagetechweek2024/favicons/android-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Minikube Deployment | CERN Storage Tech Week</title><meta property="og:title" content="Minikube Deployment" />
 <meta property="og:description" content="How to deploy the ScienceMesh IOP using Minikube?
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/storagetechweek2024/docs/iop/deployment/minikube/" />
+<meta property="og:url" content="/docs/iop/deployment/minikube/" />
 
 <meta itemprop="name" content="Minikube Deployment">
 <meta itemprop="description" content="How to deploy the ScienceMesh IOP using Minikube?
@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="/storagetechweek2024/scss/main.min.6a5b34902a36fa79d646d3d3a4af80a7778ee0dc9de02f268530e5a9c1148a34.css" as="style">
-<link href="/storagetechweek2024/scss/main.min.6a5b34902a36fa79d646d3d3a4af80a7778ee0dc9de02f268530e5a9c1148a34.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.6a5b34902a36fa79d646d3d3a4af80a7778ee0dc9de02f268530e5a9c1148a34.css" as="style">
+<link href="/scss/main.min.6a5b34902a36fa79d646d3d3a4af80a7778ee0dc9de02f268530e5a9c1148a34.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -54,7 +54,7 @@
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand flex-column flex-md-row td-navbar" style="margin-left:1%; margin-top:1%;">
-        <a class="navbar-brand" href="/storagetechweek2024/">
+        <a class="navbar-brand" href="/">
 		
 		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 39.2 38.7" style="enable-background:new 0 0 39.2 38.7" fill="#fff"><style>.st0{fill:#white}.st1{fill:#white}</style><title>cern</title><path class="st0" d="M39.2.1s-18.6-.1-24.5-.1c-.9.0-1.5.1-1.8.1C5.6.7.0 6.7.0 14c.1 2.5.6 5 1.4 7.4 1.2 4.1 2.5 8.8 2.5 8.8h.7l-2.8-9.3c2.4 4.3 7 7 12 7 2.7.0 5.3-.8 7.6-2.3l-12.2 13h1l11.5-12.2c1.4-1.4 2.7-3 3.8-4.7 1.5-2.2 2.3-4.8 2.2-7.4l5.4 24.3H34s-4.5-19.9-5.4-24.1-1.9-6.6-3-8.1c-.4-.2-.8-.4-1.2-.5 4.4 5.8 3.2 14.1-2.6 18.4S7.8 27.7 3.4 21.9.2 7.8 6 3.4c2.3-1.7 5.1-2.7 8-2.6 3.1.0 6.2 1.1 8.5 3.1C23 4 23.5 4.1 24 4.3c-1.7-1.7-3.7-2.9-6-3.5l21.2.1V.1z"/><path class="st0" d="M35.2 3.5l-1.3 13.2c-.3-2.7-1.3-5.2-3-7.3-4.9-6-13.7-7-19.7-2.1-.6.5-1.2 1-1.7 1.6l.6.5c4.8-5.5 13.1-6 18.6-1.2.9.8 1.7 1.7 2.3 2.6 1.8 2.9 2.6 6.3 2.2 9.7-.3 1.7-.9 3.4-1.8 4.9l.2 1c1.6-2.4 2.4-4.6 3-10.1.5-4.2 1.3-12.7 1.3-12.7L35.2 3.5z"/><path class="st1" d="M7.9 11.9l-.4.5c-.4-.4-1-.7-1.6-.7-1.2.0-2.2 1-2.2 2.2.0 1.2 1 2.2 2.2 2.2.6.0 1.2-.2 1.6-.7L8 15.8c-.6.5-1.3.8-2.1.9-1.6.0-2.8-1.3-2.8-2.8.0-1.6 1.3-2.8 2.8-2.8C6.7 11.1 7.4 11.4 7.9 11.9z"/><path class="st1" d="M9.7 11.7v1.8h2.8v.6H9.7V16H13v.6H9.1v-5.6h3.8v.6L9.7 11.7z"/><path class="st1" d="M16.8 14.9h-.4-1.5v1.8h-.6v-5.6h2.1c1.4.0 2.2.7 2.2 1.9.1.8-.5 1.6-1.2 1.8l1.3 1.9h-.7L16.8 14.9zM16.4 14.3c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.5v2.6L16.4 14.3z"/><path class="st1" d="M24 16.7l-3.3-4.5v4.5H20v-5.6h.7l3.3 4.5v-4.5h.6v5.6H24z"/></svg></span>
 	</a>
@@ -129,10 +129,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
-    <li class="collapse show" id="storagetechweek2024-docs">
+    <li class="collapse show" id="docs">
       
       
       
@@ -147,10 +147,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Overview</a>
+    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Overview</a>
   </li>
   <ul>
-    <li class="collapse " id="storagetechweek2024-docs-overview">
+    <li class="collapse " id="docs-overview">
       
       
       
@@ -172,10 +172,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/iop/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">IOP</a>
+    <a  href="/docs/iop/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">IOP</a>
   </li>
   <ul>
-    <li class="collapse show" id="storagetechweek2024-docs-iop">
+    <li class="collapse show" id="docs-iop">
       
       
       
@@ -190,10 +190,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/iop/deployment/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Deployment</a>
+    <a  href="/docs/iop/deployment/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Deployment</a>
   </li>
   <ul>
-    <li class="collapse show" id="storagetechweek2024-docs-iop-deployment">
+    <li class="collapse show" id="docs-iop-deployment">
       
       
       
@@ -208,10 +208,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/iop/deployment/local/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Local</a>
+    <a  href="/docs/iop/deployment/local/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Local</a>
   </li>
   <ul>
-    <li class="collapse " id="storagetechweek2024-docs-iop-deployment-local">
+    <li class="collapse " id="docs-iop-deployment-local">
       
       
       
@@ -233,10 +233,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/iop/deployment/minikube/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Minikube</a>
+    <a  href="/docs/iop/deployment/minikube/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Minikube</a>
   </li>
   <ul>
-    <li class="collapse show" id="storagetechweek2024-docs-iop-deployment-minikube">
+    <li class="collapse show" id="docs-iop-deployment-minikube">
       
       
       
@@ -245,56 +245,6 @@
 </ul>
 
         
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/changelog/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Changelog</a>
-  </li>
-  <ul>
-    <li class="collapse " id="storagetechweek2024-docs-changelog">
-      
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/changelog/0.0.1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">v0.0.1</a>
-  </li>
-  <ul>
-    <li class="collapse " id="storagetechweek2024-docs-changelog-0-0-1">
-      
       
       
     </li>
@@ -322,10 +272,60 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/storagetechweek2024/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contribution Guidelines</a>
+    <a  href="/docs/changelog/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Changelog</a>
   </li>
   <ul>
-    <li class="collapse " id="storagetechweek2024-docs-contribution-guidelines">
+    <li class="collapse " id="docs-changelog">
+      
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/changelog/0.0.1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">v0.0.1</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docs-changelog-0-0-1">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contribution Guidelines</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docs-contribution-guidelines">
       
       
       
@@ -354,31 +354,6 @@
 
 
 
-
-<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-
-
-
-
-
-
-
-
-
-
-
-<a href="https://github.com/sciencemesh/sciencemesh/edit/master/content/en/docs/IOP/Deployment/Minikube/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/sciencemesh/sciencemesh/new/master/content/en/docs/IOP/Deployment/Minikube/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/sciencemesh/sciencemesh/issues/new?title=Minikube%20Deployment" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
-
-
-<a href="https://github.com/sciencemesh/sciencemesh/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
-
-
-
-
-
-</div>
 
 
 
@@ -424,28 +399,28 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="/storagetechweek2024/docs/">Documentation</a>
+	<a href="/docs/">Documentation</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="/storagetechweek2024/docs/iop/">IOP</a>
+	<a href="/docs/iop/">IOP</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="/storagetechweek2024/docs/iop/deployment/">Deployment</a>
+	<a href="/docs/iop/deployment/">Deployment</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/storagetechweek2024/docs/iop/deployment/minikube/">Minikube</a>
+	<a href="/docs/iop/deployment/minikube/">Minikube</a>
 </li>
 
 	</ol>
@@ -528,7 +503,7 @@ minikube delete</code></pre></div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified November 29, 2020: <a  href="https://github.com/sciencemesh/sciencemesh/commit/c306efcec1d118943304ed2a2aacbc38c7bfc6ee">init (c306efc)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 29, 2020: <a  href="/commit/c306efcec1d118943304ed2a2aacbc38c7bfc6ee">init (c306efc)</a>
 </div>
 </div>
 
@@ -541,24 +516,8 @@ minikube delete</code></pre></div>
     <div class="row">
       <div class="col-6 col-sm-4 text-xs-center order-sm-2">
         
-        
-        
       </div>
       <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
-        
-        
-        
-<ul class="list-inline mb-0">
-  
-  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
-    <a target="_blank" href="https://github.com/sciencemesh/sciencemesh">
-      <i class="fab fa-github"></i>
-    </a>
-  </li>
-  
-</ul>
-
-        
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
@@ -586,7 +545,7 @@ minikube delete</code></pre></div>
 
 
 
-<script src="/storagetechweek2024/js/main.min.ba9d6d48798c0958238d849c5edf9327d4deaf60493243f591b4c029872db933.js" integrity="sha256-up1tSHmMCVgjjYScXt&#43;TJ9Ter2BJMkP1kbTAKYctuTM=" crossorigin="anonymous"></script>
+<script src="/js/main.min.b5fc1b29d2465835844254bd4d804738eaf24c0cec53009b4c6899989be55a47.js" integrity="sha256-tfwbKdJGWDWEQlS9TYBHOOryTAzsUwCbTGiZmJvlWkc=" crossorigin="anonymous"></script>
 
 
 
